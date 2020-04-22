@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ album.name }}</h1>
+<p>band name: {{ album.band.name }} <br>
+genre: {{ album.genre }} <br>
+publish date: {{ album.publish_date }} <br>
+</p>
+<ul>
+    {% for song in songs %}
+    <li><a href="{% url 'song_detail' song.id %}">{{ song.name }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>{{ musician.name }}</h1>
+<p>Here is a list of bands that this musician has been a part of and their,
+associated albums.</p>
+{% for band, albums in bands_albums %}
+<h3>{{ band.name }}</h3>
+<ul>
+{% for album in albums %}
+<li><a href="{% url 'album_detail' album.id %}"> {{ album.name }}</a></li>
+{% endfor %}
+</ul>
+{% endfor %}
+
+{% endblock %}

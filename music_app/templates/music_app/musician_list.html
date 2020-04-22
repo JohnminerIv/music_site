@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+Here is a list of musicians that you can look at.
+<ul>
+{% for musician in musicians %}
+<li><a href="{% url 'musician_detail' musician.id %}">{{ musician.name }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
